@@ -6,11 +6,11 @@ namespace musicplayer.services;
 public interface ILibraryService
 {
 
-	Song AddSong(Song song);
+	void AddSong(Song song);
 
-	bool Delete(String songId);
+	bool Delete(int songId);
 
-	void UpdateSong(String songId, Song song);
+	void UpdateSong(int songId, Song song);
 
 	List<Song> SearchByTitle(String keyterm);
 
@@ -26,21 +26,19 @@ public class LibraryService : ILibraryService
 		this.context = context;
 	}
 
-	public Song AddSong(Song song)
+	public void AddSong(Song song)
 	{
 		this.context.Songs.Add(song);
 		this.context.SaveChanges();
-
-		return FindById(song.Id);
 	}
 
 
-	private Song FindById(String id)
+	private Song FindById(int id)
 	{
 		return this.context.Songs.SingleOrDefault(x => x.Id == id);
 	}
 
-	public bool Delete(string songId)
+	public bool Delete(int songId)
 	{
 		var song = FindById(songId);
 		if (song != null)
@@ -59,7 +57,7 @@ public class LibraryService : ILibraryService
 		return list;
 	}
 
-	public void UpdateSong(string songId, Song song)
+	public void UpdateSong(int songId, Song song)
 	{
 		var foundSong = FindById(songId);
 		if (foundSong != null)

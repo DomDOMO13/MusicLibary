@@ -21,14 +21,14 @@ static class Program
         var host = CreateHostBuilder().Build();
         ServiceProvider = host.Services;
 
-        using (var db = ServiceProvider.GetRequiredService<AppContext>()) {
-            db.Database.EnsureCreated();
+        // using (var db = ServiceProvider.GetRequiredService<AppContext>()) {
+        //     db.Database.EnsureCreated();
 
-            var user = db.Users.ToList();
-        }
+        //     var user = db.Users.ToList();
+        // }
 
 
-          Application.Run(ServiceProvider.GetRequiredService<Form1>());
+          Application.Run(ServiceProvider.GetRequiredService<Search>());
     }
 
     public static IServiceProvider ServiceProvider { get; private set; }
@@ -41,6 +41,10 @@ static class Program
                 services.AddTransient<IUserService, UserService>();
                 services.AddTransient<ILibraryService, LibraryService>();
                 services.AddTransient<Form1>();
+                services.AddTransient<MusicMenu>();
+                services.AddTransient<AddMenu>();
+                    services.AddTransient<Search>();
+                
             });
     }
 }
