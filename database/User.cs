@@ -3,9 +3,9 @@ namespace musicplayer.Database;
 public class User
 {
 
-	public String Id { get; set; }
-	public String Username { get; set; }
+	public int Id { get; set; }
+	public string Username { get; set; }
 
-	public String Password {get; set;}
+	public string Password {get; set;}
 
 }

@@ -7,14 +7,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using musicplayer.services;
 
 namespace musicplayer
 {
     public partial class Search : Form
     {
-        public Search()
+        ILibraryService libraryService;
+
+        public Search(ILibraryService libraryService)
         {
             InitializeComponent();
+            this.libraryService = libraryService;
+
+           this.searchBtn.Click += OnClick;
+        }
+
+        private void OnClick(object? sender, EventArgs e)
+        {
+            this.searchFunction();
+        }
+
+        void searchFunction() {
+            var keyterm = this.nameTb.Text.Trim();
+            var songs = this.libraryService.SearchByTitle(keyterm);
+
+            MessageBox.Show(" Found" + songs.Count);
         }
     }
 }

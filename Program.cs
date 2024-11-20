@@ -2,6 +2,7 @@ namespace musicplayer;
 
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using musicplayer.services;
 
 static class Program
 {
@@ -20,14 +21,14 @@ static class Program
         var host = CreateHostBuilder().Build();
         ServiceProvider = host.Services;
 
-        using (var db = ServiceProvider.GetRequiredService<AppContext>()) {
-            db.Database.EnsureCreated();
+        // using (var db = ServiceProvider.GetRequiredService<AppContext>()) {
+        //     db.Database.EnsureCreated();
 
-            var user = db.Users.ToList();
-        }
+        //     var user = db.Users.ToList();
+        // }
 
 
-          Application.Run(ServiceProvider.GetRequiredService<MusicMenu>());
+        Application.Run(ServiceProvider.GetRequiredService<MusicMenu>());
     }
 
     public static IServiceProvider ServiceProvider { get; private set; }
@@ -37,8 +38,13 @@ static class Program
             .ConfigureServices((context, services) =>
             {
                 services.AddDbContext<AppContext>();
+                services.AddTransient<IUserService, UserService>();
+                services.AddTransient<ILibraryService, LibraryService>();
                 services.AddTransient<Form1>();
                 services.AddTransient<MusicMenu>();
+                services.AddTransient<AddMenu>();
+                services.AddTransient<Search>();
+
             });
     }
 }

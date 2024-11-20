@@ -8,6 +8,7 @@ public class AppContext : DbContext
 {
 
 	public DbSet<User> Users { get; set; }
+	public DbSet<Song> Songs {get; set;}
 
 	private String dbpath;
 
