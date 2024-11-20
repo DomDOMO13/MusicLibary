@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace musicplayer
 {
-    public partial class Delete : Form
+    public partial class DeleteMenu : Form
     {
-        public Delete()
+        public DeleteMenu()
         {
             InitializeComponent();
         }
