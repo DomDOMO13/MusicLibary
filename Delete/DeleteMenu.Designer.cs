@@ -1,6 +1,6 @@
 ﻿namespace musicplayer
 {
-    partial class Delete
+    partial class DeleteMenu
     {
         /// <summary>
         /// Required designer variable.

@@ -57,7 +57,6 @@
             label2.Size = new Size(77, 31);
             label2.TabIndex = 1;
             label2.Text = "Genre";
-            label2.Click += this.label2_Click;
             // 
             // nameTb
             // 
@@ -66,7 +65,6 @@
             nameTb.Name = "nameTb";
             nameTb.Size = new Size(371, 34);
             nameTb.TabIndex = 2;
-            nameTb.TextChanged += this.nameTb_TextChanged;
             // 
             // genreTb
             // 
@@ -75,7 +73,6 @@
             genreTb.Name = "genreTb";
             genreTb.Size = new Size(371, 34);
             genreTb.TabIndex = 3;
-            genreTb.TextChanged += this.genreTb_TextChanged;
             // 
             // artistTb
             // 
@@ -84,7 +81,6 @@
             artistTb.Name = "artistTb";
             artistTb.Size = new Size(371, 34);
             artistTb.TabIndex = 5;
-            artistTb.TextChanged += this.artistTb_TextChanged;
             // 
             // label3
             // 
@@ -95,7 +91,6 @@
             label3.Size = new Size(75, 31);
             label3.TabIndex = 4;
             label3.Text = "Artist";
-            label3.Click += this.label3_Click;
             // 
             // addBtn
             // 
@@ -106,7 +101,6 @@
             addBtn.TabIndex = 6;
             addBtn.Text = "Add";
             addBtn.UseVisualStyleBackColor = true;
-            addBtn.Click += this.addBtn_Click;
             // 
             // AddMenu
             // 
