@@ -27,7 +27,7 @@ static class Program
         }
 
 
-          Application.Run(ServiceProvider.GetRequiredService<Form1>());
+          Application.Run(ServiceProvider.GetRequiredService<MusicMenu>());
     }
 
     public static IServiceProvider ServiceProvider { get; private set; }
@@ -38,6 +38,7 @@ static class Program
             {
                 services.AddDbContext<AppContext>();
                 services.AddTransient<Form1>();
+                services.AddTransient<MusicMenu>();
             });
     }
 }
