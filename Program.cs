@@ -27,7 +27,7 @@ static class Program
         }
 
 
-          Application.Run(ServiceProvider.GetRequiredService<Form1>());
+          Application.Run(ServiceProvider.GetRequiredService<MainMenu>());
     }
 
     public static IServiceProvider ServiceProvider { get; private set; }
@@ -37,7 +37,7 @@ static class Program
             .ConfigureServices((context, services) =>
             {
                 services.AddDbContext<AppContext>();
-                services.AddTransient<Form1>();
+                services.AddTransient<MainMenu>();
             });
     }
 }
