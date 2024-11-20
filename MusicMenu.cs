@@ -16,5 +16,26 @@ namespace musicplayer
         {
             InitializeComponent();
         }
+
+        private void addbtn_Click(object sender, EventArgs e)
+        {
+            AddMenu addMenu = new AddMenu();
+            addMenu.ShowDialog();
+        }
+
+        private void deletebtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void updatebtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

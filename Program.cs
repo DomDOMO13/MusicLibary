@@ -28,7 +28,7 @@ static class Program
         // }
 
 
-          Application.Run(ServiceProvider.GetRequiredService<Search>());
+        Application.Run(ServiceProvider.GetRequiredService<MusicMenu>());
     }
 
     public static IServiceProvider ServiceProvider { get; private set; }
@@ -43,8 +43,8 @@ static class Program
                 services.AddTransient<Form1>();
                 services.AddTransient<MusicMenu>();
                 services.AddTransient<AddMenu>();
-                    services.AddTransient<Search>();
-                
+                services.AddTransient<Search>();
+
             });
     }
 }

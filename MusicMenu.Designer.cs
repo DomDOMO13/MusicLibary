@@ -43,6 +43,7 @@
             addbtn.TabIndex = 0;
             addbtn.Text = "Add";
             addbtn.UseVisualStyleBackColor = true;
+            addbtn.Click += addbtn_Click;
             // 
             // deletebtn
             // 
@@ -54,33 +55,36 @@
             deletebtn.TabIndex = 1;
             deletebtn.Text = "Delete";
             deletebtn.UseVisualStyleBackColor = false;
+            deletebtn.Click += deletebtn_Click;
             // 
             // updatebtn
             // 
             updatebtn.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            updatebtn.Location = new Point(52, 183);
+            updatebtn.Location = new Point(52, 169);
             updatebtn.Name = "updatebtn";
             updatebtn.Size = new Size(160, 82);
             updatebtn.TabIndex = 2;
             updatebtn.Text = "Update";
             updatebtn.UseVisualStyleBackColor = true;
+            updatebtn.Click += updatebtn_Click;
             // 
             // searchBtn
             // 
             searchBtn.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            searchBtn.Location = new Point(256, 183);
+            searchBtn.Location = new Point(256, 169);
             searchBtn.Name = "searchBtn";
             searchBtn.Size = new Size(160, 82);
             searchBtn.TabIndex = 3;
             searchBtn.Text = "Search";
             searchBtn.UseVisualStyleBackColor = true;
+            searchBtn.Click += searchBtn_Click;
             // 
             // MusicMenu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.AppWorkspace;
-            ClientSize = new Size(483, 331);
+            ClientSize = new Size(495, 308);
             Controls.Add(searchBtn);
             Controls.Add(updatebtn);
             Controls.Add(deletebtn);
