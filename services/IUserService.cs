@@ -22,6 +22,14 @@ public class UserService : IUserService
 	public User Login(string username, string password)
 	{
 		var user = this.appContext.Users.Where(x => x.Username.SequenceEqual(username)).SingleOrDefault();
+		if(user == null) {
+			throw new Exception("Password or Username incorrect");
+		}
+
+		if(!user.Password.SequenceEqual(password)) {
+			throw new Exception("Password or Username incorrect");
+		}
+
 		return user;
 	}
 
